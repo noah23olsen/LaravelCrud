@@ -9,4 +9,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 //get request at the class CarController, method addCar
-Route::get('/addCar',[CarController::class,'addCar'] );
+Route::post('/addCar',[CarController::class,'addCar'] );
+Route::get('/cars',[CarController::class,'getAllCars']);
+//note {id} parameter in UR
+Route::get('/cars/{id}',[CarController::class,'getCarById']);
+
+// Route::ge

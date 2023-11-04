@@ -14,4 +14,4 @@ Route::get('/cars',[CarController::class,'getAllCars']);
 //note {id} parameter in UR
 Route::get('/cars/{id}',[CarController::class,'getCarById']);
 
-// Route::ge
+Route::put('/cars/update',[CarController::class,'updateCarById']);

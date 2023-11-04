@@ -17,6 +17,22 @@ class CarController extends Controller
 
         return 'Car added successfully!';
     }
+
+    public function updateCarById(Request $request){
+        //this[request] would be entered on a form in the frontend
+        $data = $request->json()->all();
+        //extracts the id parameter from the request, and finds corresponding ID in db
+        $car = Car::find($request->input('id'));
+        if (!$car) {
+            return response()->json(['message' => 'Car not found'], 404);
+        }
+        else {
+            $car->car_name = $data['car_name'];
+            $car->update();
+            return response()->json(['message' => 'Car updated successfully'], 200);
+        }
+    }
+
     public function getAllCars(){
         $cars = Car::all();
         //array to hold response data
@@ -29,6 +45,7 @@ class CarController extends Controller
         //Spring Boot would handle this JSON serialization directly, PHP requires it explicitly
         return response()->json($response);
     }
+    
     public function getCarById($id){
         $car = Car::find($id);
 
@@ -41,5 +58,4 @@ class CarController extends Controller
             return response()->json(['responseMessage'=>'Car not found'],404);
         }
     }
-    // public function 
 }

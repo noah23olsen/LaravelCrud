@@ -41,11 +41,11 @@ class CarController extends Controller
             'cars' => $cars
         ];
         //converts response array into JSON format
-        // "->" accesses methods and porperties of objects
+        // "->" accesses methods and properties of objects
         //Spring Boot would handle this JSON serialization directly, PHP requires it explicitly
         return response()->json($response);
     }
-    
+
     public function getCarById($id){
         $car = Car::find($id);
 
@@ -53,7 +53,21 @@ class CarController extends Controller
             return response()->json(['car'=>$car]);
         }
         else {
-            // "repsonseMessage" is a hard coded variable
+            // "responseMessage" is a hard coded variable
+            //the 404 is also hard coded(but makes sense in this scenario)
+            return response()->json(['responseMessage'=>'Car not found'],404);
+        }
+    }
+
+    public function deleteCarById($id){
+        $car = Car::find($id);
+
+        if($car){
+            $car->delete();
+            return response()->json(['message' => 'Car deleted successfully'], 200);
+        }
+        else {
+            // "responseMessage" is a hard coded variable
             //the 404 is also hard coded(but makes sense in this scenario)
             return response()->json(['responseMessage'=>'Car not found'],404);
         }

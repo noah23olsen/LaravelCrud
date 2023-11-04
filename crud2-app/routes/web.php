@@ -15,3 +15,4 @@ Route::get('/cars',[CarController::class,'getAllCars']);
 Route::get('/cars/{id}',[CarController::class,'getCarById']);
 
 Route::put('/cars/update',[CarController::class,'updateCarById']);
+Route::delete('/cars/delete/{id}',[CarController::class,'deleteCarById']);

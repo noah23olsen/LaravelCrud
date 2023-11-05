@@ -15,7 +15,7 @@ class CarController extends Controller
         //save() INSERT, update() UPDATE, delete() DELETE
         $car->save(); //INSERT the car object to the database(triggers SQL insert)
 
-        return 'Car added successfully!';
+        return response()->json(['message'=>'Car added successfully!']);
     }
 
     public function updateCarById(Request $request){

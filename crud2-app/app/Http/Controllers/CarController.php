@@ -43,14 +43,14 @@ class CarController extends Controller
         //converts response array into JSON format
         // "->" accesses methods and properties of objects
         //Spring Boot would handle this JSON serialization directly, PHP requires it explicitly
-        return response()->json($response);
+        return response()->json([$response,200]);
     }
 
     public function getCarById($id){
         $car = Car::find($id);
 
         if($car){
-            return response()->json(['car'=>$car]);
+            return response()->json(['car'=>$car],200);
         }
         else {
             // "responseMessage" is a hard coded variable

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Get Car By Id</h2>
+    <h2>Delete Car By Id</h2>
     <!-- calls handleGetById, prevents default submission -->
-    <form @submit.prevent="handleGetById">
+    <form @submit.prevent="handleDeleteById">
       <label>ID:</label>
       <input type="text" v-model="id">
       <button type="submit">Submit</button>
@@ -28,10 +28,10 @@ export default {
     };
   },
   methods: {
-    handleGetById(){
-        carApi.getCarById(this.id)
+    handleDeleteById(){
+        carApi.deleteCarById(this.id)
         .then((response)=>{
-            this.car = response.data.car;
+            console.log(response.data)
         })
         .catch((e)=>{
             console.error(e);

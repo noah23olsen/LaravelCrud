@@ -1,9 +1,11 @@
 <template>
   <NavBar />
   <router-view></router-view>
+  <GetAllCars/>
 </template>
 
 <script>
+import GetAllCars from './components/GetAllCars.vue'
 import NavBar from './components/NavBar.vue'
 
 
@@ -11,6 +13,7 @@ export default {
   name: 'App',
   components: {
     NavBar,
+    GetAllCars,
   }
 }
 </script>

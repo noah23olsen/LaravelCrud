@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <router-link to="/allCars">Inventory</router-link>
     <router-link to="/details">Details</router-link>
     <router-link to="/delete">Delete</router-link>
     <router-link to="/update">Update</router-link>

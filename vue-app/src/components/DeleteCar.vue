@@ -9,9 +9,10 @@
     </form>
     <div v-if="car">
       <p>ID: {{ car.id }} | Car Name: {{ car.car_name }}</p>
+      <p></p>
     </div>
     <div v-else>
-        <p>{{ errorMsg }}</p>
+        <p>{{ returnMsg }}</p>
     </div>
   </div>
 </template>
@@ -24,19 +25,21 @@ export default {
     return {
       id: '',
       car: null,
-      errorMsg:null,
+      returnMsg:null,
+      
     };
   },
   methods: {
     handleDeleteById(){
         carApi.deleteCarById(this.id)
         .then((response)=>{
-            console.log(response.data)
+            console.log(response.data);
+            this.returnMsg = response.data.message;
         })
         .catch((e)=>{
             console.error(e);
             this.car = null;
-            this.errorMsg = e;
+            this.returnMsg = e;
         })
     }
   },

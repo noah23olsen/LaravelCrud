@@ -1,14 +1,16 @@
 <template>
-  <car-details></car-details>
+  <NavBar />
+  <router-view></router-view>
 </template>
 
 <script>
-import CarDetails from './components/CarDetails.vue';
+import NavBar from './components/NavBar.vue'
+
 
 export default {
   name: 'App',
   components: {
-     CarDetails,
+    NavBar,
   }
 }
 </script>

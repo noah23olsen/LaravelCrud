@@ -7,5 +7,7 @@ const api = axios.create({
 export const carApi = {
     getCarById: (id) => api.get(`/cars/${id}`),
     deleteCarById: (id) => api.delete(`/cars/delete/${id}`),
+    updateCarById: (item) => api.put('/cars/update',item),
+    getAllCars: () => api.get('/cars'),
 
 }

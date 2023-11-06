@@ -34,7 +34,20 @@ return [
     */
 
     'connections' => [
-
+        // 'pgsql_testing' => [ // New testing connection
+        //     'driver' => 'pgsql',
+        //     'host' => env('DB_HOST_TEST', '127.0.0.1'), // Use separate testing host, port, database, username, and password
+        //     'port' => env('DB_PORT_TEST', '5432'),
+        //     'database' => env('DB_DATABASE_TEST', 'your_test_database'),
+        //     'username' => env('DB_USERNAME_TEST', 'your_test_username'),
+        //     'password' => env('DB_PASSWORD_TEST', 'your_test_password'),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'search_path' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
+    
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

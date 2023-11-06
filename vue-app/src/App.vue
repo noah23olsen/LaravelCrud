@@ -1,7 +1,7 @@
 <template>
   <NavBar />
   <router-view></router-view>
-  <GetAllCars/>
+  <GetAllCars v-if="$route.path !== '/allCars'"/>
 </template>
 
 <script>

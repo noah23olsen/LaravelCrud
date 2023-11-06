@@ -9,5 +9,6 @@ export const carApi = {
     deleteCarById: (id) => api.delete(`/cars/delete/${id}`),
     updateCarById: (item) => api.put('/cars/update',item),
     getAllCars: () => api.get('/cars'),
+    addCar:(item) => api.post('/addCar',item),
 
 }

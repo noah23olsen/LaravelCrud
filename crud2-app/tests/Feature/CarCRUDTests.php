@@ -39,8 +39,46 @@ class CarCRUDTests extends TestCase
         $response = $this->json('GET','/cars');
 
         $response->assertStatus(200);
-
     }
+    /** @test */
+    //this one is mad about the ID as well 
+    // public function delete_car()
+    // {
+    //     $response = $this->json('delete', '/cars/delete/3');
+
+    //     $response->assertStatus(200);
+    // }
+    // public function test_update_car_by_id()
+    // {
+    //     $response = $this->json('update','/cars/update',[
+    //         'car_name' => 'Tesla 10'
+    //     ]);
+
+    //     $response->assertJ
+    // }
+    /** @test */
+    // public function test_update_car()
+    // {
+    //     // Create a car or retrieve an existing one from the test database
+    //     $car = Car::firstOrCreate(['id' => 1], ['car_name' => 'Original Name']);
     
+    //     // Data to update the car
+    //     $dataToUpdate = ['car_name' => 'Updated Name'];
+    
+    //     // Make a request to update the car
+    //     $response = $this->json('PUT', '/cars/update', [
+    //         'id' => $car->id,
+    //         'data' => $dataToUpdate,
+    //     ]);
+    
+    //     // Assert that the update was successful (e.g., HTTP status code 200)
+    //     $response->assertStatus(200);
+    
+    //     // Retrieve the updated car from the database
+    //     $updatedCar = Car::find($car->id);
+    
+    //     // Assert that the car's name has been updated
+    //     $this->assertEquals('Updated Name', $updatedCar->car_name);
+    // }
 }
 
